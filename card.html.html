@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>계양탁구클럽 | 이혜성 PRO COACH 디지털 명함</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Noto Sans KR & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- QRCode.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brandPurpleDark: '#1d0c46',
+            brandPurpleMid: '#2e136b',
+            brandYellow: '#ffd400',
+            brandBlue: '#0066cc',
+            brandRed: '#d91e2a',
+            brandGreen: '#2d8a34',
+          },
+          boxShadow: {
+            'card-glow': '0 20px 45px rgba(0, 0, 0, 0.6), inset 0 0 0 2.5px rgba(0, 102, 204, 0.55)',
+            'yellow-glow': '0 4px 14px rgba(255, 212, 0, 0.35)',
+            'blue-glow': '0 5px 15px rgba(0, 102, 204, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-[#170838] via-[#2e136b] to-[#1a0a40] text-white min-h-screen flex justify-center items-start py-5 px-3.5 pb-12 relative overflow-x-hidden select-none">
+
+  <!-- 상단 왼쪽 모서리 & 하단 오른쪽 모서리 노란색 대각선 포인트 도형 -->
+  <div aria-hidden="true" class="fixed -top-16 -left-16 w-44 h-44 bg-[#ffd400] rotate-45 z-0 opacity-95 pointer-events-none shadow-lg"></div>
+  <div aria-hidden="true" class="fixed -bottom-20 -right-20 w-48 h-48 bg-[#ffd400] rotate-45 z-0 opacity-95 pointer-events-none shadow-lg"></div>
+
+  <!-- 중앙 모바일 명함 카드 프레임 -->
+  <main class="relative z-10 w-full max-w-[430px] bg-gradient-to-b from-[#2e146b]/95 to-[#1c0b44]/98 border-[2.5px] border-[#ffd400] rounded-3xl shadow-card-glow overflow-hidden">
+
+    <!-- 1. 상단 헤더 -->
+    <header class="pt-7 pb-5 px-5 text-center bg-[radial-gradient(circle_at_50%_25%,rgba(104,56,214,0.6),transparent_72%)] border-b border-white/15">
+
+      <!-- 원형 클럽 엠블럼 영역 (외부 파일 불필요 인라인 고정밀 SVG 로고) -->
+      <div class="w-36 h-36 mx-auto mb-3.5 rounded-full bg-[#4a148c] border-4 border-[#ffd400] shadow-2xl flex items-center justify-center relative overflow-hidden">
+        <svg viewBox="0 0 300 300" class="w-full h-full block" role="img" aria-label="계양탁구클럽 로고">
+          <defs>
+            <!-- 원형 배경 보라빛 그라데이션 -->
+            <radialGradient id="clubBgGrad" cx="50%" cy="42%" r="58%">
+              <stop offset="0%" stop-color="#6a2bc2" />
+              <stop offset="65%" stop-color="#512da8" />
+              <stop offset="100%" stop-color="#3c167d" />
+            </radialGradient>
+
+            <!-- 원 내부 클리핑 영역 -->
+            <clipPath id="emblemCircleClip">
+              <circle cx="150" cy="150" r="144" />
+            </clipPath>
+
+            <!-- 하단 곡선 영문 텍스트 경로 -->
+            <path id="englishArcPath" d="M 32,172 A 124,116 0 0,0 268,172" />
+
+            <!-- 최하단 3색 배너 텍스트 경로 -->
+            <path id="sloganRedArc" d="M 24,196 A 136,136 0 0,0 104,264" />
+            <path id="sloganBlueArc" d="M 106,265 A 136,136 0 0,0 194,265" />
+            <path id="sloganGreenArc" d="M 196,264 A 136,136 0 0,0 276,196" />
+
+            <!-- 타이틀 외곽선 필터 -->
+            <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="2.5" stdDeviation="1.5" flood-color="#1a073d" flood-opacity="0.65" />
+            </filter>
+          </defs>
+
+          <g clip-path="url(#emblemCircleClip)">
+            <!-- 배경 원 -->
+            <circle cx="150" cy="150" r="150" fill="url(#clubBgGrad)" />
+
+            <!-- 상단 타이틀: 계양(주황) + 탁구클럽(파랑) 두꺼운 흰색 테두리 -->
+            <g filter="url(#logoShadow)">
+              <!-- 외곽 흰색 스트로크 레이어 -->
+              <text x="150" y="96" text-anchor="middle" font-family="'Noto Sans KR', sans-serif" font-weight="900" font-size="44" letter-spacing="-1.5" stroke="#ffffff" stroke-width="11" stroke-linejoin="round" paint-order="stroke">
+                <tspan fill="#ff7b00">계양</tspan><tspan fill="#005bb5">탁구클럽</tspan>
+              </text>
+              <!-- 전면 컬러 텍스트 레이어 -->
+              <text x="150" y="96" text-anchor="middle" font-family="'Noto Sans KR', sans-serif" font-weight="900" font-size="44" letter-spacing="-1.5">
+                <tspan fill="#ff7b00">계양</tspan><tspan fill="#005bb5">탁구클럽</tspan>
+              </text>
+            </g>
+
+            <!-- 왼쪽 흰색 액션 스피드 라인 -->
+            <g stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" opacity="0.95">
+              <line x1="42" y1="126" x2="54" y2="132" />
+              <line x1="36" y1="142" x2="50" y2="144" />
+              <line x1="41" y1="158" x2="53" y2="155" />
+            </g>
+
+            <!-- 웃는 흰색 탁구공 캐릭터 -->
+            <g transform="translate(94, 146)">
+              <circle cx="0" cy="0" r="33" fill="#ffffff" stroke="#1b0b42" stroke-width="4" />
+              <!-- 음영 하이라이트 -->
+              <path d="M -22,16 A 29,29 0 0,0 24,14 A 31,26 0 0,1 -22,16 Z" fill="#e6ecf5" />
+              <!-- 반달 눈웃음 -->
+              <path d="M -17,-6 Q -11,-15 -5,-6" fill="none" stroke="#1b0b42" stroke-width="3.5" stroke-linecap="round" />
+              <path d="M 6,-6 Q 12,-15 18,-6" fill="none" stroke="#1b0b42" stroke-width="3.5" stroke-linecap="round" />
+              <!-- 발그레 볼터치 -->
+              <ellipse cx="-18" cy="4" rx="5.5" ry="3.2" fill="#ff7b89" opacity="0.85" />
+              <ellipse cx="19" cy="4" rx="5.5" ry="3.2" fill="#ff7b89" opacity="0.85" />
+              <!-- 활짝 웃는 입 -->
+              <path d="M -11,3 Q 0,21 12,3 Z" fill="#1b0b42" stroke="#1b0b42" stroke-width="2" stroke-linejoin="round" />
+              <path d="M -7,9 Q 0,18 8,9 Q 0,6 -7,9 Z" fill="#e63946" />
+            </g>
+
+            <!-- 빨간색 탁구 라켓 (중앙) -->
+            <g transform="translate(162, 143) rotate(-32)">
+              <!-- 그립 손잡이 -->
+              <rect x="-7.5" y="18" width="15" height="28" rx="4" fill="#ffd400" stroke="#1b0b42" stroke-width="3.5" />
+              <line x1="-2.5" y1="22" x2="-2.5" y2="42" stroke="#e09f00" stroke-width="2" stroke-linecap="round" />
+              <!-- 라켓 블레이드 흰 테두리 -->
+              <ellipse cx="0" cy="0" rx="25" ry="28" fill="#d91e2a" stroke="#ffffff" stroke-width="5" />
+              <ellipse cx="0" cy="0" rx="25" ry="28" fill="none" stroke="#1b0b42" stroke-width="2.5" />
+              <!-- 러버 광택 -->
+              <path d="M -13,-14 A 18,20 0 0,1 8,-19" fill="none" stroke="#ff7582" stroke-width="3" stroke-linecap="round" />
+            </g>
+
+            <!-- 파란색 탁구 라켓 (우측) -->
+            <g transform="translate(212, 145) rotate(28)">
+              <!-- 그립 손잡이 -->
+              <rect x="-7.5" y="18" width="15" height="28" rx="4" fill="#ffd400" stroke="#1b0b42" stroke-width="3.5" />
+              <line x1="2.5" y1="22" x2="2.5" y2="42" stroke="#e09f00" stroke-width="2" stroke-linecap="round" />
+              <!-- 라켓 블레이드 흰 테두리 -->
+              <ellipse cx="0" cy="0" rx="25" ry="28" fill="#0066cc" stroke="#ffffff" stroke-width="5" />
+              <ellipse cx="0" cy="0" rx="25" ry="28" fill="none" stroke="#1b0b42" stroke-width="2.5" />
+              <!-- 러버 광택 -->
+              <path d="M -6,-19 A 18,20 0 0,1 14,-11" fill="none" stroke="#66b2ff" stroke-width="3" stroke-linecap="round" />
+            </g>
+
+            <!-- 라켓 위 노란색 서브 탁구공 -->
+            <g transform="translate(146, 118)">
+              <circle cx="0" cy="0" r="11" fill="#ffd400" stroke="#ffffff" stroke-width="2.5" />
+              <circle cx="-3" cy="-3" r="3" fill="#fff59d" />
+            </g>
+
+            <!-- 오른쪽 스윙 모션 커브 라인 -->
+            <path d="M 244,154 Q 241,168 231,176" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" />
+            <path d="M 252,160 Q 248,174 239,181" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.85" />
+
+            <!-- 캐릭터 하단 노란색 스우시 곡선 -->
+            <path d="M 38,176 Q 150,212 262,176 Q 150,202 38,176 Z" fill="#ffd400" />
+
+            <!-- 영문 곡선 텍스트: GYEYANG PING PONG CLUB -->
+            <text font-family="Inter, 'Noto Sans KR', sans-serif" font-weight="900" font-size="18.5" fill="#ffffff" letter-spacing="0.8">
+              <textPath href="#englishArcPath" startOffset="50%" text-anchor="middle">
+                GYEYANG PING PONG CLUB
+              </textPath>
+            </text>
+
+            <!-- 하단 3색 슬로건 원호 밴드 (빨강 / 파랑 / 초록) -->
+            <g>
+              <!-- 빨강 세그먼트 -->
+              <path d="M 12,188 A 144,144 0 0,0 105,288 L 114,254 A 112,112 0 0,1 38,180 Z" fill="#d91e2a" />
+              <!-- 파랑 세그먼트 -->
+              <path d="M 105,288 A 144,144 0 0,0 195,288 L 186,254 A 112,112 0 0,1 114,254 Z" fill="#0066cc" />
+              <!-- 초록 세그먼트 -->
+              <path d="M 195,288 A 144,144 0 0,0 288,188 L 262,180 A 112,112 0 0,1 186,254 Z" fill="#2d8a34" />
+
+              <!-- 3색 원호 내 슬로건 텍스트 -->
+              <text font-family="Inter, sans-serif" font-weight="900" font-size="12.5" fill="#ffffff" letter-spacing="0.4">
+                <textPath href="#sloganRedArc" startOffset="52%" text-anchor="middle"># NO, PAIN</textPath>
+              </text>
+              <text font-family="Inter, sans-serif" font-weight="900" font-size="12.5" fill="#ffffff" letter-spacing="0.4">
+                <textPath href="#sloganBlueArc" startOffset="50%" text-anchor="middle"># NO, GAIN</textPath>
+              </text>
+              <text font-family="Inter, sans-serif" font-weight="900" font-size="12.5" fill="#f4ff81" letter-spacing="0.4">
+                <textPath href="#sloganGreenArc" startOffset="48%" text-anchor="middle"># GYEYANG</textPath>
+              </text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- 노란색 알약형 배지 -->
+      <div class="inline-block bg-gradient-to-r from-[#ffe247] to-[#ffb800] text-[#1c0b45] text-xs font-black px-3.5 py-1 rounded-full tracking-wider mb-2 shadow-yellow-glow">
+        PRO COACH
+      </div>
+
+      <!-- 코치 성함 (파란색 입체 그림자) -->
+      <h1 class="text-4xl font-black tracking-[0.12em] text-white mb-1.5 drop-shadow-[0_3px_0_#0055b3]">
+        이혜성
+      </h1>
+
+      <!-- 서브 텍스트 -->
+      <p class="text-[13.5px] font-medium text-[#d5c9f2]">
+        <strong class="text-[#ffd400] font-bold">개인 레슨 | 그룹 레슨 (유아 · 청소년 · 성인)</strong>
+      </p>
+    </header>
+
+    <!-- 2. 3색 슬로건 바 (빨강/파랑/초록 3등분) -->
+    <div class="grid grid-cols-3 text-[11px] font-black text-center tracking-wide">
+      <div class="bg-[#d91e2a] text-white py-2 px-1"># NO, PAIN</div>
+      <div class="bg-[#0066cc] text-white py-2 px-1"># NO, GAIN</div>
+      <div class="bg-[#2d8a34] text-[#f4ff81] py-2 px-1"># GYEYANG</div>
+    </div>
+
+    <!-- 본문 콘텐츠 영역 -->
+    <section class="p-4 sm:p-5 flex flex-col gap-3.5">
+
+      <!-- 3. 원터치 액션 버튼 -->
+      <div class="grid grid-cols-2 gap-2.5">
+        <a href="tel:010-9455-6486" class="flex items-center justify-center gap-1.5 py-3.5 px-3 rounded-2xl text-[14.5px] font-extrabold bg-gradient-to-br from-[#ffd400] to-[#ffae00] text-[#1c0b45] shadow-yellow-glow active:scale-[0.97] transition-transform">
+          <span>📞</span>
+          <span>전화 상담</span>
+        </a>
+        <a href="sms:010-9455-6486" class="flex items-center justify-center gap-1.5 py-3.5 px-3 rounded-2xl text-[14.5px] font-bold bg-white/10 text-white border-[1.5px] border-[#ffd400]/60 hover:bg-white/15 active:scale-[0.97] transition-all">
+          <span>💬</span>
+          <span>문자 문의</span>
+        </a>
+        <button type="button" onclick="downloadVCard()" class="col-span-2 flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl text-[14.5px] font-bold bg-gradient-to-br from-[#0066cc] to-[#004999] text-white border border-white/25 shadow-blue-glow active:scale-[0.98] transition-transform cursor-pointer">
+          <span>📲</span>
+          <span>휴대폰 연락처에 바로 저장</span>
+        </button>
+      </div>
+
+      <!-- 4. 연락처 및 레슨 안내 박스 -->
+      <div class="bg-white/[0.07] border border-white/15 rounded-2xl p-4">
+        <h2 class="text-[13.5px] font-extrabold text-[#ffd400] mb-2.5 flex items-center gap-1.5">
+          <span>🏓</span>
+          <span>연락처 및 레슨 안내</span>
+        </h2>
+        <ul class="flex flex-col gap-2 text-[13.5px]">
+          <li class="flex justify-between items-center gap-2">
+            <span class="text-[#d5c9f2] font-medium shrink-0">직통 연락처</span>
+            <a href="tel:010-9455-6486" class="text-white font-bold underline decoration-[#ffd400]/50 underline-offset-4">010-9455-6486</a>
+          </li>
+          <li class="flex justify-between items-center gap-2">
+            <span class="text-[#d5c9f2] font-medium shrink-0">구장 전화</span>
+            <a href="tel:032-545-7330" class="text-white font-semibold">032-545-7330</a>
+          </li>
+          <li class="flex justify-between items-center gap-2">
+            <span class="text-[#d5c9f2] font-medium shrink-0">레슨 시간</span>
+            <span class="text-white font-semibold text-right">월~금 오전 / 월·수·금 야간</span>
+          </li>
+          <li class="flex justify-between items-center gap-2">
+            <span class="text-[#d5c9f2] font-medium shrink-0">전형 · 특기</span>
+            <span class="text-white font-semibold text-right">오른손 이면타법 전진속공</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 5. 학력·자격 및 지도경력 박스 -->
+      <div class="bg-white/[0.07] border border-white/15 rounded-2xl p-4">
+        <h2 class="text-[13.5px] font-extrabold text-[#ffd400] mb-2.5 flex items-center gap-1.5">
+          <span>📋</span>
+          <span>학력 · 자격 및 지도경력</span>
+        </h2>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="bg-[#ffd400]/15 border border-[#ffd400]/45 text-[#ffe97d] text-xs font-bold px-2.5 py-1 rounded-lg">중펜 전문</span>
+          <span class="bg-[#ffd400]/15 border border-[#ffd400]/45 text-[#ffe97d] text-xs font-bold px-2.5 py-1 rounded-lg">각종 돌출러버</span>
+          <span class="bg-[#ffd400]/15 border border-[#ffd400]/45 text-[#ffe97d] text-xs font-bold px-2.5 py-1 rounded-lg">탁구 생활스포츠지도사 2급</span>
+          <span class="bg-[#ffd400]/15 border border-[#ffd400]/45 text-[#ffe97d] text-xs font-bold px-2.5 py-1 rounded-lg">탁구심판 2급</span>
+        </div>
+        <ul class="mt-3 pt-2.5 border-t border-dashed border-white/15 text-[12.6px] text-[#e8e0fa] leading-relaxed space-y-1.5">
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>서울 대광 중·고교 졸업 / 전북대학교 졸업</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span class="text-white font-semibold">계양 탁구클럽 현 코치 (월~금 : 오전 / 월, 수, 금 : 야간)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>전라북도 익산 이일여자 중학교 탁구부 트레이너</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>서울 금천구 하나로 탁구클럽 / 양천구 베스트 탁구클럽 코치</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>서울 구로구 힐링 탁구클럽 전임코치 외 다수</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 6. 주요 선수경력 (대한탁구협회) 박스 -->
+      <div class="bg-white/[0.07] border border-white/15 rounded-2xl p-4">
+        <h2 class="text-[13.5px] font-extrabold text-[#ffd400] mb-2.5 flex items-center justify-between">
+          <span class="flex items-center gap-1.5">
+            <span>🏆</span>
+            <span>입상경력 (대한탁구협회)</span>
+          </span>
+          <span class="text-[10.5px] font-bold px-2 py-0.5 rounded-md bg-[#0066cc]/40 border border-[#66b2ff]/40 text-[#b8dcff]">엘리트 선수 출신</span>
+        </h2>
+        <ul class="text-[12.3px] text-[#e8e0fa] leading-relaxed space-y-1.5">
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제85회 전국체육대회 / 대학부(단체3위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제22회 한국 대학탁구 연맹전 / 대학부(복식3위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제49회 전국남녀 종별 탁구선수권 대회 / 대학부(복식3위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제48회 전국남녀 종별 탁구선수권 대회 / 고등부(복식3위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제82회 전국 체육대회 / 고등부(단체2위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제34회 문화관광부장관기 전국남녀 학생 종별 탁구대회 / 고등부(단체3위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제17회 대통령기 전국 시도대항 탁구대회 / 고등부(단체3위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제38회 회장기 전국남녀 중고등학생 탁구대회 / 고등부(복식3위)</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-[#ffd400] font-black">•</span>
+            <span>제46회 전국남녀 종별 탁구선수권 대회 / 고등부(단체2위) 외 다수</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 7. 레슨비 입금 계좌 박스 -->
+      <div class="bg-white/[0.07] border border-white/15 rounded-2xl p-4">
+        <h2 class="text-[13.5px] font-extrabold text-[#ffd400] mb-2.5 flex items-center gap-1.5">
+          <span>💳</span>
+          <span>레슨비 입금 계좌</span>
+        </h2>
+        <div class="flex items-center justify-between gap-2 bg-[#12072e]/70 px-3.5 py-2.5 rounded-xl border border-white/10">
+          <div>
+            <div class="text-xs text-[#d5c9f2]">NH농협 · 예금주: 이혜성</div>
+            <div class="text-[15px] font-extrabold text-white tracking-wide mt-0.5" id="accountNumber">527013-56-048326</div>
+          </div>
+          <button type="button" onclick="copyAccount()" class="bg-[#ffd400] hover:bg-[#ffe033] text-[#1c0b45] rounded-xl px-3.5 py-2 text-xs font-black shrink-0 active:scale-95 transition-transform cursor-pointer">
+            계좌복사
+          </button>
+        </div>
+      </div>
+
+      <!-- 8. 오시는 길 박스 -->
+      <div class="bg-white/[0.07] border border-white/15 rounded-2xl p-4">
+        <h2 class="text-[13.5px] font-extrabold text-[#ffd400] mb-2 flex items-center gap-1.5">
+          <span>📍</span>
+          <span>계양탁구클럽 오시는 길</span>
+        </h2>
+        <p class="text-[13.5px] text-[#f2edff] leading-snug">
+          인천광역시 계양구 계양문화로 145
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3">
+          <a href="https://map.naver.com/v5/search/%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EA%B3%84%EC%96%91%EA%B5%AC%20%EA%B3%84%EC%96%91%EB%AC%B8%ED%99%94%EB%A1%9C%20145" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl text-[13px] font-bold text-center bg-[#03c75a] text-white hover:brightness-105 active:scale-[0.98] transition-all">
+            네이버 지도
+          </a>
+          <a href="https://map.kakao.com/link/search/인천광역시 계양구 계양문화로 145" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl text-[13px] font-bold text-center bg-[#fee500] text-[#191919] hover:brightness-105 active:scale-[0.98] transition-all">
+            카카오맵
+          </a>
+        </div>
+      </div>
+
+      <!-- 9. QR 코드 공유 박스 -->
+      <div class="flex items-center gap-3.5 bg-white/[0.07] border border-white/15 rounded-2xl p-3.5">
+        <div id="qrcode" class="bg-white p-1.5 rounded-xl shrink-0 w-[84px] h-[84px] flex items-center justify-center shadow-inner"></div>
+        <div class="text-xs text-[#d5c9f2] leading-relaxed">
+          <strong class="block text-white text-[13.5px] font-bold mb-0.5">QR코드로 명함 공유</strong>
+          카메라로 스캔하시면 이혜성 프로코치 디지털 명함을 바로 열어보실 수 있습니다.
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- 하단 플로팅 토스트 알림 메시지 -->
+  <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-20 opacity-0 bg-[#0f0626]/95 text-[#ffd400] border-[1.5px] border-[#ffd400] px-5 py-2.5 rounded-full text-[13.5px] font-bold z-50 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-2xl">
+    알림 메시지
+  </div>
+
+  <script>
+    /**
+     * 페이지 로드 시 QR 코드 자동 렌더링
+     */
+    window.addEventListener('DOMContentLoaded', function () {
+      try {
+        const qrContainer = document.getElementById('qrcode');
+        const currentUrl = window.location.href;
+        const targetUrl = (currentUrl && currentUrl.startsWith('http') && !currentUrl.includes('srcdoc'))
+          ? currentUrl
+          : 'https://map.naver.com/v5/search/%EA%B3%84%EC%96%91%ED%83%81%EA%B5%AC%ED%81%B4%EB%9F%BD';
+
+        if (typeof QRCode !== 'undefined') {
+          new QRCode(qrContainer, {
+            text: targetUrl,
+            width: 72,
+            height: 72,
+            colorDark: '#1d0c46',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+          });
+        }
+      } catch (err) {
+        console.error('QR 코드 생성 중 오류:', err);
+      }
+    });
+
+    /**
+     * 토스트 메시지 표시 함수
+     */
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2400);
+    }
+
+    /**
+     * 계좌번호 원클릭 클립보드 복사 (iFrame 호환 execCommand 방식 우선 적용)
+     */
+    function copyAccount() {
+      const accountText = '527013-56-048326';
+      try {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = accountText;
+        tempInput.style.position = 'fixed';
+        tempInput.style.left = '-9999px';
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
+        const copied = document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        if (copied) {
+          showToast('NH농협 계좌번호가 복사되었습니다.');
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(accountText).then(() => {
+            showToast('NH농협 계좌번호가 복사되었습니다.');
+          });
+        }
+      } catch (err) {
+        console.error('계좌번호 복사 오류:', err);
+        showToast('계좌번호: 527013-56-048326');
+      }
+    }
+
+    /**
+     * 한글 UTF-8 인코딩 적용된 vCard(.vcf) 다운로드
+     */
+    function downloadVCard() {
+      try {
+        const vcardLines = [
+          'BEGIN:VCARD',
+          'VERSION:3.0',
+          'N;CHARSET=UTF-8:이;혜성;;;',
+          'FN;CHARSET=UTF-8:이혜성 프로코치 (계양탁구클럽)',
+          'ORG;CHARSET=UTF-8:계양탁구클럽',
+          'TITLE;CHARSET=UTF-8:PRO COACH',
+          'TEL;TYPE=CELL,VOICE:010-9455-6486',
+          'TEL;TYPE=WORK,VOICE:032-545-7330',
+          'ADR;TYPE=WORK;CHARSET=UTF-8:;;계양문화로 145;계양구;인천광역시;;대한민국',
+          'NOTE;CHARSET=UTF-8:월~금 오전 / 월·수·금 야간 레슨 | 오른손 이면타법 전진속공 · 중펜 · 돌출러버 전문',
+          'END:VCARD'
+        ];
+
+        const vcardContent = '\uFEFF' + vcardLines.join('\r\n');
+        const blob = new Blob([vcardContent], { type: 'text/vcard;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = '이혜성_프로코치.vcf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+        showToast('연락처 파일(이혜성_프로코치.vcf)이 저장되었습니다.');
+      } catch (err) {
+        console.error('연락처 생성 오류:', err);
+        showToast('연락처 저장 중 문제가 발생했습니다.');
+      }
+    }
+  </script>
+</body>
+</html>
